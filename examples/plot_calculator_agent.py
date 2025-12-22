@@ -25,22 +25,27 @@ from smolagent.calculator_tools import (
     VerifyCalculationTool,
 )
 
-# Initialize the LLM provider (will use OPENROUTER_API_KEY from environment)
-# You can get a free API key at https://openrouter.ai/
-llm_provider = OpenRouterProvider(
-    # api_key="your-api-key-here",  # Or set OPENROUTER_API_KEY env var
-    model="google/gemini-2.0-flash-exp:free"  # Free model
-)
+# Check if API key is available
+HAS_API_KEY = os.environ.get("OPENROUTER_API_KEY") is not None
 
-# Create the calculator tools
-tools = [
-    CalculatorTool(),
-    MathFunctionTool(),
-    VerifyCalculationTool(),
-]
+if HAS_API_KEY:
+    # Initialize the LLM provider
+    llm_provider = OpenRouterProvider(
+        model="google/gemini-2.0-flash-exp:free"  # Free model
+    )
 
-# Create the agent
-agent = Agent(llm_provider=llm_provider, tools=tools, max_iterations=10)
+    # Create the calculator tools
+    tools = [
+        CalculatorTool(),
+        MathFunctionTool(),
+        VerifyCalculationTool(),
+    ]
+
+    # Create the agent
+    agent = Agent(llm_provider=llm_provider, tools=tools, max_iterations=10)
+else:
+    print("Note: OPENROUTER_API_KEY not set. Examples will show code only.")
+    print("Get a free API key at https://openrouter.ai/")
 
 # %%
 # Basic Arithmetic
@@ -48,10 +53,13 @@ agent = Agent(llm_provider=llm_provider, tools=tools, max_iterations=10)
 #
 # Let's start with a simple arithmetic problem.
 
-if os.environ.get("OPENROUTER_API_KEY"):
+if HAS_API_KEY:
     print("=== Basic Arithmetic ===")
     result = agent.run("What is 15 * 23 + 47?", verbose=True)
     print(f"\nFinal Answer: {result}")
+else:
+    print("Example code:")
+    print('agent.run("What is 15 * 23 + 47?", verbose=True)')
 
 # %%
 # Verifying Calculations
@@ -59,13 +67,16 @@ if os.environ.get("OPENROUTER_API_KEY"):
 #
 # The agent can verify if calculations are correct.
 
-if os.environ.get("OPENROUTER_API_KEY"):
+if HAS_API_KEY:
     print("\n=== Verifying Calculations ===")
     result = agent.run(
         "Is the calculation '25 * 4 = 100' correct? Please verify.",
         verbose=True,
     )
     print(f"\nFinal Answer: {result}")
+else:
+    print("Example code:")
+    print('agent.run("Is the calculation \'25 * 4 = 100\' correct?", verbose=True)')
 
 # %%
 # Advanced Math Functions
@@ -73,13 +84,16 @@ if os.environ.get("OPENROUTER_API_KEY"):
 #
 # The agent can use Python's math functions for more complex operations.
 
-if os.environ.get("OPENROUTER_API_KEY"):
+if HAS_API_KEY:
     print("\n=== Advanced Math Functions ===")
     result = agent.run(
         "What is the square root of 144 plus the factorial of 5?",
         verbose=True,
     )
     print(f"\nFinal Answer: {result}")
+else:
+    print("Example code:")
+    print('agent.run("What is the square root of 144 plus the factorial of 5?")')
 
 # %%
 # Complex Multi-Step Problems
@@ -87,13 +101,16 @@ if os.environ.get("OPENROUTER_API_KEY"):
 #
 # The agent can break down complex problems into steps.
 
-if os.environ.get("OPENROUTER_API_KEY"):
+if HAS_API_KEY:
     print("\n=== Complex Problem ===")
     result = agent.run(
         "Calculate the area of a circle with radius 7. Use pi = 3.14159",
         verbose=True,
     )
     print(f"\nFinal Answer: {result}")
+else:
+    print("Example code:")
+    print('agent.run("Calculate the area of a circle with radius 7")')
 
 # %%
 # Key Takeaways

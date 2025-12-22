@@ -37,6 +37,7 @@ dev = [
     "sphinx-gallery>=0.14.0",
     "sphinx-rtd-theme>=2.0.0",
     "myst-parser>=2.0.0",
+    "matplotlib>=3.7.0",
 ]
 
 [project.urls]
