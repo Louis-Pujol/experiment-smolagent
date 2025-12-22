@@ -5,7 +5,6 @@ This script demonstrates the basic usage of the calculator agent
 without requiring an API key (uses mock for demo purposes).
 """
 
-from smolagent import Agent
 from smolagent.calculator_tools import (
     CalculatorTool,
     MathFunctionTool,
@@ -22,33 +21,33 @@ def demo_tools_directly():
     # Calculator tool
     calc = CalculatorTool()
     print(f"\nTool: {calc.name}")
-    print(f"Expression: 2 + 2 * 3")
+    print("Expression: 2 + 2 * 3")
     result = calc.execute(expression="2 + 2 * 3")
     print(f"Result: {result}")
 
-    print(f"\nExpression: (10 + 5) * 2")
+    print("\nExpression: (10 + 5) * 2")
     result = calc.execute(expression="(10 + 5) * 2")
     print(f"Result: {result}")
 
     # Math function tool
     math_tool = MathFunctionTool()
     print(f"\n\nTool: {math_tool.name}")
-    print(f"Function: sqrt(144)")
+    print("Function: sqrt(144)")
     result = math_tool.execute(function="sqrt", value=144)
     print(f"Result: {result}")
 
-    print(f"\nFunction: factorial(5)")
+    print("\nFunction: factorial(5)")
     result = math_tool.execute(function="factorial", value=5)
     print(f"Result: {result}")
 
     # Verify calculation tool
     verify = VerifyCalculationTool()
     print(f"\n\nTool: {verify.name}")
-    print(f"Verify: 25 * 4 = 100")
+    print("Verify: 25 * 4 = 100")
     result = verify.execute(expression="25 * 4", expected=100)
     print(f"Result: {result}")
 
-    print(f"\nVerify: 25 * 4 = 101 (should be False)")
+    print("\nVerify: 25 * 4 = 101 (should be False)")
     result = verify.execute(expression="25 * 4", expected=101)
     print(f"Result: {result}")
 

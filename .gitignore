@@ -59,3 +59,7 @@ ENV/
 # OS
 .DS_Store
 Thumbs.db
+
+# Build artifacts
+*.whl
+*.tar.gz
