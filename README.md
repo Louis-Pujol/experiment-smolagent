@@ -189,13 +189,14 @@ Full documentation is available in the `docs` folder and includes:
 ## Project Structure
 
 ```
-experiment-agentexp/
-├── agentexp/              # Main package
-│   ├── __init__.py
-│   ├── agent.py            # Core agent implementation
-│   ├── tools.py            # Base tool class
-│   ├── llm.py              # LLM provider abstraction
-│   └── calculator_tools.py # Calculator tool implementations
+experiment-smolagent/
+├── src/
+│   └── agentexp/           # Main package
+│       ├── __init__.py
+│       ├── agent.py        # Core agent implementation
+│       ├── tools.py        # Base tool class
+│       ├── llm.py          # LLM provider abstraction
+│       └── calculator_tools.py # Calculator tool implementations
 ├── tests/                  # Test suite
 │   ├── test_agent.py
 │   ├── test_tools.py
@@ -237,4 +238,4 @@ MIT License - see LICENSE file for details
 
 ## Acknowledgments
 
-Inspired by the [agentexps](https://github.com/huggingface/agentexps) library from Hugging Face.
+Inspired by the [smolagents](https://github.com/huggingface/smolagents) library from Hugging Face.
