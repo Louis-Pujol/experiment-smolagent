@@ -5,7 +5,7 @@ from unittest.mock import Mock, patch
 
 import pytest
 
-from smolagent.llm import OpenRouterProvider
+from agentexp.llm import OpenRouterProvider
 
 
 class TestOpenRouterProvider:
@@ -35,7 +35,7 @@ class TestOpenRouterProvider:
         provider = OpenRouterProvider(api_key="test-key", model="custom-model")
         assert provider.model == "custom-model"
 
-    @patch("smolagent.llm.requests.post")
+    @patch("agentexp.llm.requests.post")
     def test_generate_success(self, mock_post):
         """Test successful generation."""
         mock_response = Mock()
@@ -54,7 +54,7 @@ class TestOpenRouterProvider:
         assert call_args[1]["json"]["model"] == "google/gemini-2.0-flash-exp:free"
         assert call_args[1]["json"]["messages"] == messages
 
-    @patch("smolagent.llm.requests.post")
+    @patch("agentexp.llm.requests.post")
     def test_generate_with_params(self, mock_post):
         """Test generation with custom parameters."""
         mock_response = Mock()
@@ -71,7 +71,7 @@ class TestOpenRouterProvider:
         assert call_args[1]["json"]["temperature"] == 0.5
         assert call_args[1]["json"]["max_tokens"] == 500
 
-    @patch("smolagent.llm.requests.post")
+    @patch("agentexp.llm.requests.post")
     def test_generate_http_error(self, mock_post):
         """Test generation handles HTTP errors."""
         mock_response = Mock()

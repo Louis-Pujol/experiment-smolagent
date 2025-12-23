@@ -9,8 +9,8 @@ import json
 import re
 from typing import Any
 
-from smolagent.llm import LLMProvider
-from smolagent.tools import Tool
+from agentexp.llm import LLMProvider
+from agentexp.tools import Tool
 
 
 class Agent:

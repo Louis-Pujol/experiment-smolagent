@@ -14,7 +14,7 @@ and implement the required methods.
 #
 # Let's create a simple tool that reverses a string.
 
-from smolagent import Tool
+from agentexp import Tool
 
 
 class ReverseStringTool(Tool):
@@ -52,7 +52,7 @@ print(f"Reverse 'hello': {tool.execute(text='hello')}")
 # Now let's use this tool with an agent. Note that for this example,
 # we'll skip the actual agent execution since it requires an API key.
 
-# from smolagent import OpenRouterProvider
+# from agentexp import OpenRouterProvider
 #
 # llm_provider = OpenRouterProvider()
 # agent = Agent(llm_provider=llm_provider, tools=[tool])

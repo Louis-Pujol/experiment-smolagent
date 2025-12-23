@@ -3,11 +3,11 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath(".."))
+sys.path.insert(0, os.path.abspath("../src"))
 
 # -- Project information -----------------------------------------------------
 
-project = "Smolagent"
+project = "AgentExp"
 copyright = "2024, Louis Pujol"
 author = "Louis Pujol"
 release = "0.1.0"

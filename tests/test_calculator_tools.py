@@ -4,7 +4,7 @@ import math
 
 import pytest
 
-from smolagent.calculator_tools import (
+from agentexp.calculator_tools import (
     CalculatorTool,
     MathFunctionTool,
     VerifyCalculationTool,

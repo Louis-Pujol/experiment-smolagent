@@ -18,8 +18,8 @@ The agent is LLM-agnostic and uses OpenRouter by default with a free model.
 
 import os
 
-from smolagent import Agent, OpenRouterProvider
-from smolagent.calculator_tools import (
+from agentexp import Agent, OpenRouterProvider
+from agentexp.calculator_tools import (
     CalculatorTool,
     MathFunctionTool,
     VerifyCalculationTool,
@@ -76,7 +76,7 @@ if HAS_API_KEY:
     print(f"\nFinal Answer: {result}")
 else:
     print("Example code:")
-    print('agent.run("Is the calculation \'25 * 4 = 100\' correct?", verbose=True)')
+    print("agent.run(\"Is the calculation '25 * 4 = 100' correct?\", verbose=True)")
 
 # %%
 # Advanced Math Functions

@@ -7,7 +7,7 @@ API Reference
 Agent
 -----
 
-.. automodule:: smolagent.agent
+.. automodule:: agentexp.agent
    :members:
    :undoc-members:
    :show-inheritance:
@@ -15,7 +15,7 @@ Agent
 Tools
 -----
 
-.. automodule:: smolagent.tools
+.. automodule:: agentexp.tools
    :members:
    :undoc-members:
    :show-inheritance:
@@ -23,7 +23,7 @@ Tools
 Calculator Tools
 ----------------
 
-.. automodule:: smolagent.calculator_tools
+.. automodule:: agentexp.calculator_tools
    :members:
    :undoc-members:
    :show-inheritance:
@@ -31,7 +31,7 @@ Calculator Tools
 LLM Providers
 -------------
 
-.. automodule:: smolagent.llm
+.. automodule:: agentexp.llm
    :members:
    :undoc-members:
    :show-inheritance:

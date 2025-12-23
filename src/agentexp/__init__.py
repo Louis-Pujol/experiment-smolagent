@@ -1,5 +1,5 @@
 """
-Smolagent - An educational LLM-agnostic agent framework.
+AgentExp - An educational LLM-agnostic agent framework.
 
 This package provides a simple, educational framework for building AI agents
 that can use tools to accomplish tasks. The framework is designed to be:
@@ -11,8 +11,8 @@ that can use tools to accomplish tasks. The framework is designed to be:
 
 __version__ = "0.1.0"
 
-from smolagent.agent import Agent
-from smolagent.llm import LLMProvider, OpenRouterProvider
-from smolagent.tools import Tool
+from agentexp.agent import Agent
+from agentexp.llm import LLMProvider, OpenRouterProvider
+from agentexp.tools import Tool
 
 __all__ = ["Agent", "LLMProvider", "OpenRouterProvider", "Tool"]

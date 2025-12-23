@@ -8,7 +8,7 @@ the agent to perform and verify computations.
 import math
 from typing import Union
 
-from smolagent.tools import Tool
+from agentexp.tools import Tool
 
 
 class CalculatorTool(Tool):

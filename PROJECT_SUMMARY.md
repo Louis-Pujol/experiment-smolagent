@@ -2,11 +2,11 @@
 
 ## Overview
 
-This repository implements a complete, educational, LLM-agnostic agent framework called "Smolagent" with a calculator agent example. The project demonstrates best practices in Python package development including clean code, comprehensive testing, documentation, and tooling.
+This repository implements a complete, educational, LLM-agnostic agent framework called "AgentExp" with a calculator agent example. The project demonstrates best practices in Python package development including clean code, comprehensive testing, documentation, and tooling.
 
 ## What Was Implemented
 
-### 1. Core Framework (smolagent/)
+### 1. Core Framework (agentexp/)
 
 **Agent System:**
 - `agent.py` - Core agent with reasoning loop that decides which tools to use
@@ -103,8 +103,8 @@ Three specialized tools:
 
 ### Package Structure
 ```
-experiment-smolagent/
-├── smolagent/              # Main package
+experiment-agentexp/
+├── agentexp/              # Main package
 ├── tests/                  # Test suite
 ├── examples/               # Sphinx gallery examples
 ├── docs/                   # Sphinx documentation
@@ -139,8 +139,8 @@ experiment-smolagent/
 
 ### Basic Usage
 ```python
-from smolagent import Agent, OpenRouterProvider
-from smolagent.calculator_tools import CalculatorTool
+from agentexp import Agent, OpenRouterProvider
+from agentexp.calculator_tools import CalculatorTool
 
 llm = OpenRouterProvider()  # Uses OPENROUTER_API_KEY env var
 agent = Agent(llm_provider=llm, tools=[CalculatorTool()])
@@ -181,11 +181,11 @@ pre-commit run --all-files
 ## Files Created
 
 **Core Package (8 files):**
-- smolagent/__init__.py
-- smolagent/agent.py
-- smolagent/tools.py
-- smolagent/llm.py
-- smolagent/calculator_tools.py
+- agentexp/__init__.py
+- agentexp/agent.py
+- agentexp/tools.py
+- agentexp/llm.py
+- agentexp/calculator_tools.py
 
 **Tests (4 files):**
 - tests/test_agent.py

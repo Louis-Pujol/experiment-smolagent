@@ -41,8 +41,8 @@ Create a simple calculator agent:
 
 .. code-block:: python
 
-   from smolagent import Agent, OpenRouterProvider
-   from smolagent.calculator_tools import CalculatorTool
+   from agentexp import Agent, OpenRouterProvider
+   from agentexp.calculator_tools import CalculatorTool
 
    # Initialize LLM provider and tools
    llm = OpenRouterProvider()

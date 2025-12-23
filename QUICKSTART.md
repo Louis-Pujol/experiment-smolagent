@@ -1,13 +1,13 @@
 # Quick Start Guide
 
-Welcome to Smolagent! This guide will help you get started quickly.
+Welcome to AgentExp! This guide will help you get started quickly.
 
 ## Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/Louis-Pujol/experiment-smolagent.git
-cd experiment-smolagent
+git clone https://github.com/Louis-Pujol/experiment-agentexp.git
+cd experiment-agentexp
 
 # Install in development mode
 pip install -e ".[dev]"
@@ -38,8 +38,8 @@ Create a file called `my_first_agent.py`:
 
 ```python
 import os
-from smolagent import Agent, OpenRouterProvider
-from smolagent.calculator_tools import CalculatorTool, MathFunctionTool
+from agentexp import Agent, OpenRouterProvider
+from agentexp.calculator_tools import CalculatorTool, MathFunctionTool
 
 # Initialize the LLM provider
 llm = OpenRouterProvider()  # Uses OPENROUTER_API_KEY from environment
@@ -93,7 +93,7 @@ ruff check .
 pytest
 
 # Run tests with coverage
-pytest --cov=smolagent
+pytest --cov=agentexp
 
 # Install pre-commit hooks
 pre-commit install
@@ -108,7 +108,7 @@ pre-commit install
 ## Project Structure
 
 ```
-smolagent/
+agentexp/
 ├── agent.py              # Core agent orchestration
 ├── tools.py              # Base tool class
 ├── llm.py                # LLM provider abstraction

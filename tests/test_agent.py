@@ -2,9 +2,9 @@
 
 import pytest
 
-from smolagent.agent import Agent
-from smolagent.llm import LLMProvider
-from smolagent.tools import Tool
+from agentexp.agent import Agent
+from agentexp.llm import LLMProvider
+from agentexp.tools import Tool
 
 
 class MockLLMProvider(LLMProvider):

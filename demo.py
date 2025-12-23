@@ -5,7 +5,7 @@ This script demonstrates the basic usage of the calculator agent
 without requiring an API key (uses mock for demo purposes).
 """
 
-from smolagent.calculator_tools import (
+from agentexp.calculator_tools import (
     CalculatorTool,
     MathFunctionTool,
     VerifyCalculationTool,
@@ -74,7 +74,7 @@ def demo_agent_structure():
     print("  2. Set environment variable: export OPENROUTER_API_KEY='your-key'")
     print("  3. Run the following code:")
     print()
-    print("  from smolagent import Agent, OpenRouterProvider")
+    print("  from agentexp import Agent, OpenRouterProvider")
     print("  llm = OpenRouterProvider()")
     print("  agent = Agent(llm_provider=llm, tools=tools)")
     print("  result = agent.run('What is 15 * 23 + 47?', verbose=True)")

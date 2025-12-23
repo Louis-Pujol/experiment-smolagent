@@ -34,7 +34,7 @@ responses from a list of messages.
 OpenRouter provides access to multiple LLMs through a single API:
 
 ```python
-from smolagent import OpenRouterProvider
+from agentexp import OpenRouterProvider
 
 # Use default free model
 llm = OpenRouterProvider(api_key="your-key")
@@ -51,7 +51,7 @@ llm = OpenRouterProvider(
 You can create your own provider by inheriting from `LLMProvider`:
 
 ```python
-from smolagent import LLMProvider
+from agentexp import LLMProvider
 
 class CustomProvider(LLMProvider):
     def generate(self, messages, **kwargs):
@@ -64,7 +64,7 @@ class CustomProvider(LLMProvider):
 Creating custom tools is straightforward:
 
 ```python
-from smolagent import Tool
+from agentexp import Tool
 
 class MyTool(Tool):
     @property
@@ -114,7 +114,7 @@ The package includes three calculator tools:
 Evaluates basic mathematical expressions:
 
 ```python
-from smolagent.calculator_tools import CalculatorTool
+from agentexp.calculator_tools import CalculatorTool
 
 tool = CalculatorTool()
 result = tool.execute(expression="2 + 2 * 3")  # Returns 8
@@ -125,7 +125,7 @@ result = tool.execute(expression="2 + 2 * 3")  # Returns 8
 Applies mathematical functions like sqrt, sin, log, etc.:
 
 ```python
-from smolagent.calculator_tools import MathFunctionTool
+from agentexp.calculator_tools import MathFunctionTool
 
 tool = MathFunctionTool()
 result = tool.execute(function="sqrt", value=16)  # Returns 4.0
@@ -136,7 +136,7 @@ result = tool.execute(function="sqrt", value=16)  # Returns 4.0
 Verifies if a calculation is correct:
 
 ```python
-from smolagent.calculator_tools import VerifyCalculationTool
+from agentexp.calculator_tools import VerifyCalculationTool
 
 tool = VerifyCalculationTool()
 is_correct = tool.execute(expression="2 + 2", expected=4)  # Returns True
@@ -175,7 +175,7 @@ pytest
 Run with coverage:
 
 ```bash
-pytest --cov=smolagent
+pytest --cov=agentexp
 ```
 
 ### Pre-commit Hooks

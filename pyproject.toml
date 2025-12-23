@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "experiment-smolagent"
+name = "agentexp"
 version = "0.1.0"
 description = "An educational LLM-agnostic agent framework with examples"
 readme = "README.md"
@@ -44,6 +44,9 @@ dev = [
 Homepage = "https://github.com/Louis-Pujol/experiment-smolagent"
 Repository = "https://github.com/Louis-Pujol/experiment-smolagent"
 
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [tool.ruff]
 line-length = 88
 target-version = "py39"
@@ -61,17 +64,17 @@ select = [
 ignore = []
 
 [tool.ruff.lint.isort]
-known-first-party = ["smolagent"]
+known-first-party = ["agentexp"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
-addopts = "-v --cov=smolagent --cov-report=term-missing"
+addopts = "-v --cov=agentexp --cov-report=term-missing"
 
 [tool.coverage.run]
-source = ["smolagent"]
+source = ["agentexp"]
 omit = ["*/tests/*"]
 
 [tool.coverage.report]

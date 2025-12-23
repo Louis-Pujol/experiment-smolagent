@@ -2,7 +2,7 @@
 
 import pytest
 
-from smolagent.tools import Tool
+from agentexp.tools import Tool
 
 
 class TestTool:

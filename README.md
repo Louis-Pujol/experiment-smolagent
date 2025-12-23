@@ -1,7 +1,8 @@
-# Smolagent 🤖
+# AgentExp 🤖
 
 An educational, LLM-agnostic agent framework for building AI agents with tool use capabilities.
 
+[![CI](https://github.com/Louis-Pujol/experiment-agentexp/actions/workflows/ci.yml/badge.svg)](https://github.com/Louis-Pujol/experiment-agentexp/actions/workflows/ci.yml)
 [![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
 [![Tests](https://img.shields.io/badge/tests-pytest-blue.svg)](https://pytest.org/)
 
@@ -30,8 +31,8 @@ pip install -e ".[dev]"
 ### Basic Usage
 
 ```python
-from smolagent import Agent, OpenRouterProvider
-from smolagent.calculator_tools import CalculatorTool, MathFunctionTool
+from agentexp import Agent, OpenRouterProvider
+from agentexp.calculator_tools import CalculatorTool, MathFunctionTool
 
 # Set up LLM provider (get free API key at https://openrouter.ai/)
 llm = OpenRouterProvider(api_key="your-key")
@@ -76,7 +77,7 @@ agent.run("Calculate the area of a circle with radius 7")
 OpenRouter provides access to multiple LLMs through a single API, including free models:
 
 ```python
-from smolagent import OpenRouterProvider
+from agentexp import OpenRouterProvider
 
 # Default free model (Google Gemini Flash)
 llm = OpenRouterProvider(api_key="your-key")
@@ -95,7 +96,7 @@ Get a free API key at [https://openrouter.ai/](https://openrouter.ai/)
 Implement your own provider by inheriting from `LLMProvider`:
 
 ```python
-from smolagent import LLMProvider
+from agentexp import LLMProvider
 
 class MyProvider(LLMProvider):
     def generate(self, messages, **kwargs):
@@ -108,7 +109,7 @@ class MyProvider(LLMProvider):
 Tools are simple to create:
 
 ```python
-from smolagent import Tool
+from agentexp import Tool
 
 class MyTool(Tool):
     @property
@@ -162,7 +163,7 @@ pre-commit run --all-files
 pytest
 
 # Run with coverage
-pytest --cov=smolagent --cov-report=term-missing
+pytest --cov=agentexp --cov-report=term-missing
 
 # Run specific test file
 pytest tests/test_agent.py
@@ -188,8 +189,8 @@ Full documentation is available in the `docs` folder and includes:
 ## Project Structure
 
 ```
-experiment-smolagent/
-├── smolagent/              # Main package
+experiment-agentexp/
+├── agentexp/              # Main package
 │   ├── __init__.py
 │   ├── agent.py            # Core agent implementation
 │   ├── tools.py            # Base tool class
@@ -236,4 +237,4 @@ MIT License - see LICENSE file for details
 
 ## Acknowledgments
 
-Inspired by the [smolagents](https://github.com/huggingface/smolagents) library from Hugging Face.
+Inspired by the [agentexps](https://github.com/huggingface/agentexps) library from Hugging Face.

@@ -10,8 +10,8 @@ Get a free API key at: https://openrouter.ai/
 import os
 import sys
 
-from smolagent import Agent, OpenRouterProvider
-from smolagent.calculator_tools import (
+from agentexp import Agent, OpenRouterProvider
+from agentexp.calculator_tools import (
     CalculatorTool,
     MathFunctionTool,
     VerifyCalculationTool,

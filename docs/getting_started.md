@@ -33,8 +33,8 @@ export OPENROUTER_API_KEY="your-api-key"
 Here's a simple example to get you started:
 
 ```python
-from smolagent import Agent, OpenRouterProvider
-from smolagent.calculator_tools import CalculatorTool, MathFunctionTool
+from agentexp import Agent, OpenRouterProvider
+from agentexp.calculator_tools import CalculatorTool, MathFunctionTool
 
 # Initialize the LLM provider
 llm = OpenRouterProvider()
